@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {        
+        // Stage to run the banner.sh script
+        stage('Run Banner Script') {
+            steps {
+                script {
+                    // Make banner.sh executable and run it
+                    sh 'chmod +x banner.sh'  // Grant execute permissions to the script
+                    sh './banner.sh'  // Execute the banner.sh script
+                }
+            }
+        }
+    }
+}
